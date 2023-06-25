@@ -12,7 +12,7 @@ const bookEntries = await getCollection('books');
             {
                 bookEntries.map(book => (
                     <li>
-                        <span>{book.data.title}</span>
+                        <a href={`/books/${book.slug}`}>{book.data.title}</a>
                     </li>
                 ))
             }
