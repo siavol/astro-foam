@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+const bookEntries = await getCollection('books');
+---
+
+<Layout title="Books">
+    <main>
+        <h1>Books</h1>
+        <ul>
+            {
+                bookEntries.map(book => (
+                    <li>
+                        <span>{book.data.title}</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+</style>
