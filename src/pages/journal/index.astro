@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+
+const journalEntries = await getCollection('journal');
+const sortedEntries = journalEntries.sort((a, b) => b.id.localeCompare(a.id));
+---
+
+<Layout title="Journal">
+    <main>
+        <h1>Journal</h1>
+        <ul>
+            {
+                sortedEntries.map(item => (
+                    <li>
+                        <a href={`/journal/${item.slug}`}>{item.id}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+</style>
