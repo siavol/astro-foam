@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 <Layout title="Astro Foam">
     <main>
-        <h1>Astro Foam</h1>
         <p class="instructions">
             Astro-Foam is an experimental project that combines the power of
             <a href="https://astro.build/">Astro</a> and
@@ -13,18 +11,6 @@ import Card from "../components/Card.astro";
             to provide a seamless web application for navigating, viewing, and searching
             the Foam knowledge database.
         </p>
-        <ul role="list" class="link-card-grid">
-            <Card
-                href="/journal"
-                title="Journal"
-                body="Journal with daily records."
-            />
-            <Card
-                href="/books"
-                title="Books"
-                body="Books catalog."
-            />
-        </ul>
     </main>
 </Layout>
 
