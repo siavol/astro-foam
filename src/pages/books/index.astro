@@ -6,8 +6,7 @@ const bookEntries = await getCollection('books');
 ---
 
 <Layout title="Books">
-    <main>
-        <h1>Books</h1>
+    <div>
         <ul>
             {
                 bookEntries.map(book => (
@@ -17,7 +16,7 @@ const bookEntries = await getCollection('books');
                 ))
             }
         </ul>
-    </main>
+    </div>
 </Layout>
 
 <style>

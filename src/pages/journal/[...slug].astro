@@ -16,10 +16,7 @@ const { Content } = await journalItem.render();
 ---
 
 <Layout title={journalItem.data.title}>
-    <main>
-        <div>
-            <h1>Journal record {journalItem.id}</h1>
-            <Content />
-        </div>
-    </main>
+    <div>
+        <Content />
+    </div>
 </Layout>
