@@ -1,4 +1,5 @@
 ---
+import NavBar from "./NavBar.astro";
 ---
 <div class="container">
     <header class="border-bottom lh-1 py-3">
@@ -20,10 +21,6 @@
     </header>
 
     <div class="nav-scroller py-1 mb-3 border-bottom">
-      <nav class="nav nav-underline justify-content-center">
-        <a class="nav-item nav-link link-body-emphasis active" href="/">Home</a>
-        <a class="nav-item nav-link link-body-emphasis" href="/journal">Journal</a>
-        <a class="nav-item nav-link link-body-emphasis" href="/books">Books</a>
-      </nav>
+      <NavBar />
     </div>
 </div>
