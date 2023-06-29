@@ -12,8 +12,17 @@ const books = defineCollection({
         type: z.literal('book')
     })
 });
+const cards = defineCollection({
+    type: 'cards',
+    schema: z.object({
+        title: z.string(),
+        date: z.string(),
+        tags: z.optional(z.array(z.string()))
+    })
+});
 
 export const collections = {
     'journal': journal,
-    'books': books
+    'books': books,
+    'cards': cards
 };

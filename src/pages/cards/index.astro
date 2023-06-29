@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+const cards = await getCollection('cards');
+---
+
+<Layout title="Cards">
+    <div>
+        <ul>
+            {
+                cards.map(cards => (
+                    <li>
+                        <a href={`/cards/${cards.slug}`}>{cards.data.title}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+</style>
