@@ -7,8 +7,7 @@ const sortedEntries = journalEntries.sort((a, b) => b.id.localeCompare(a.id));
 ---
 
 <Layout title="Journal">
-    <main>
-        <h1>Journal</h1>
+    <div>
         <ul>
             {
                 sortedEntries.map(item => (
@@ -18,7 +17,7 @@ const sortedEntries = journalEntries.sort((a, b) => b.id.localeCompare(a.id));
                 ))
             }
         </ul>
-    </main>
+    </div>
 </Layout>
 
 <style>

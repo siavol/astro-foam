@@ -1,0 +1,21 @@
+---
+const { pathname } = Astro.url;
+const navPath = pathname.split('/')[1];
+let navItem;
+switch (navPath) {
+    case 'journal':
+        navItem = 'journal';
+        break;
+    case 'books':
+        navItem = 'books';
+        break;
+    default:
+        navItem = 'home';
+        break;
+}
+---
+<nav class="nav nav-underline justify-content-center">
+    <a class=`nav-item nav-link link-body-emphasis ${navItem === 'home' ? 'active' : ''}` href="/">Home</a>
+    <a class=`nav-item nav-link link-body-emphasis ${navItem === 'journal' ? 'active' : ''}` href="/journal">Journal</a>
+    <a class=`nav-item nav-link link-body-emphasis ${navItem === 'books' ? 'active' : ''}` href="/books">Books</a>
+</nav>
