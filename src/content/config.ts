@@ -20,9 +20,17 @@ const cards = defineCollection({
         tags: z.optional(z.array(z.string()))
     })
 });
+const meetingNotes = defineCollection({
+    type: 'meeting-notes',
+    schema: z.object({
+        type: z.literal('meeting-note'),
+        tags: z.optional(z.array(z.string()))
+    })
+});
 
 export const collections = {
     'journal': journal,
     'books': books,
-    'cards': cards
+    'cards': cards,
+    'meeting-notes': meetingNotes
 };

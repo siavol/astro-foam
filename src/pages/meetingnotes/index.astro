@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+const meetingNotes = await getCollection('meeting-notes');
+---
+
+<Layout title="Meeting Notes">
+    <div>
+        <ul>
+            {
+                meetingNotes.map(note => (
+                    <li>
+                        <a href={`/meetingnotes/${note.slug}`}>{note.id}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+    }
+</style>
